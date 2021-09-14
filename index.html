@@ -9,20 +9,9 @@
 <body>
   <h1>Hallo</h1>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-  Swal.fire({
-    title: 'Test 1',
-    confirmButtonText: 'Next',
-  }).then(function() {
-    Swal.fire({
-      title: 'Test 2',
-      confirmButtonText: 'Next',
-    }).then(function() {
-      Swal.fire({
-        title: 'Test 3',
-      })
-    })
-  })
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+console.log(params);
 </script>
 </html>
