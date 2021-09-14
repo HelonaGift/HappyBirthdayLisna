@@ -13,5 +13,7 @@
 var urlSearchParams = new URLSearchParams(window.location.search);
 var params = Object.fromEntries(urlSearchParams.entries());
 console.log(params);
+var obj = JSON.parse(params);
+console.log(obj);
 </script>
 </html>
