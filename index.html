@@ -10,10 +10,17 @@
   <h1>Hallo</h1>
 </body>
 <script>
-var urlSearchParams = new URLSearchParams(window.location.search);
-var params = Object.fromEntries(urlSearchParams.entries());
-console.log(params);
-var obj = JSON.parse(params);
-console.log(obj);
+// var urlSearchParams = new URLSearchParams(window.location.search);
+// var params = Object.fromEntries(urlSearchParams.entries());
+// console.log(params);
+var qs = window.location.search.replace('?', '');  // get querystring and remove question marks
+var pairs = qs.split('&');                  // split on ampersand
+var items = {};                             // declare object to store key/value pairs
+
+// Loop through pairs and extract the key and the value (and append them to the object)
+for (var i = 0; i < pairs.length; i++) {
+    items[pairs[i].split('=')[0]] = pairs[i].split('=')[1];
+}
+console.log(items);
 </script>
 </html>
